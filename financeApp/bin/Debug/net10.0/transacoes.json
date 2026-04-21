@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "Tipo": "Receita",
+    "Categoria": "Salario",
+    "Valor": 1600,
+    "Data": "2026-03-28T00:00:00"
+  },
+  {
+    "Id": 2,
+    "Tipo": "Despesa",
+    "Categoria": "Maconha",
+    "Valor": 450,
+    "Data": "2026-03-31T00:00:00"
+  }
+]
