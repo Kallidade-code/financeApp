@@ -148,7 +148,3 @@ Acesse a documentação interativa em: `http://localhost:5197/swagger`
 - O endpoint `/Finance/categoria` retorna apenas **despesas**, agrupadas por categoria
 
 ---
-
-## 👥 Equipe
-
-- Eugênio — [github.com/seu-usuario](https://github.com/seu-usuario)
