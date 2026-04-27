@@ -5,7 +5,6 @@ using financeApp.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddCors();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,11 +17,6 @@ builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 var app = builder.Build();
-
-app.UseCors(policy =>
-    policy.AllowAnyOrigin()
-          .AllowAnyMethod()
-          .AllowAnyHeader());
 
 app.UseSwagger();
 app.UseSwaggerUI();
