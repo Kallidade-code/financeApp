@@ -4,8 +4,11 @@ using financeApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddCors();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -19,12 +22,8 @@ builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 var app = builder.Build();
 
-app.UseCors(policy =>
-    policy.AllowAnyOrigin()
-          .AllowAnyMethod()
-          .AllowAnyHeader());
-
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapControllers();
+app.MapGet("/", () => Results.Redirect("/swagger"));
 app.Run();

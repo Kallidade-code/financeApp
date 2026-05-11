@@ -40,7 +40,9 @@ namespace financeApp.Controllers
             try
             {
                 _repository.Adicionar(categoria);
-                return CreatedAtAction(nameof(BuscarPorId), new { id = categoria.Id }, categoria);
+                // return CreatedAtAction(nameof(BuscarPorId), new { id = categoria.Id }, categoria);
+                return Ok();
+
             }
             catch (ArgumentException ex)
             {

@@ -4,3 +4,28 @@ GET {{financeApp_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET http://localhost:5197/finance
+
+###
+
+POST http://localhost:5197/finance
+Content-Type: application/json
+
+{
+  "descricao": "Bolsa Estágio Egger e Mesquita",
+  "valor": 1500.00,
+  "tipo": 0,
+  "data": "2026-04-26T10:00:00",
+  "categoriaId": 1
+}
+
+###
+
+POST http://localhost:5197/categoria
+Content-Type: application/json
+
+{
+  "nome": "Estágio",
+  "tipo": 0
+}

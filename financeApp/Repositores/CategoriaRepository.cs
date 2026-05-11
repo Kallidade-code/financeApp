@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using financeApp.Data;
 using financeApp.Models;
 
@@ -19,7 +20,9 @@ namespace financeApp.Repositories
 
         public Categoria? BuscarPorId(int id)
         {
-            return _context.Categorias.Find(id);
+        return _context.Categorias
+            .AsNoTracking() 
+            .FirstOrDefault(c => c.Id == id);
         }
 
         public void Adicionar(Categoria categoria)

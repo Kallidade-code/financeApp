@@ -20,11 +20,12 @@ namespace financeApp.Repositories
                 .ToList();
         }
 
-        public Transacao? BuscarPorId(int id)
+       public Transacao? BuscarPorId(int id)
         {
             return _context.Transacoes
-                .Include(t => t.Categoria)
-                .FirstOrDefault(t => t.Id == id);
+            .AsNoTracking() 
+            .Include(t => t.Categoria)
+            .FirstOrDefault(t => t.Id == id);
         }
 
         public void Adicionar(Transacao transacao)
